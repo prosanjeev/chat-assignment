@@ -3,7 +3,7 @@ import express from "express"; // method-2
 import dotenv from "dotenv"; 
 import connectDB from "./config/database.js";
 import userRoute from "./routes/userRoute.js";
-import messageRoute from "./routes/messageRoute.js";
+import friendRoute from './routes/friendRoute.js';
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { app,server } from "./socket/socket.js";
@@ -25,7 +25,8 @@ app.use(cors(corsOption));
 
 // routes
 app.use("/api/v1/user",userRoute); 
-app.use("/api/v1/message",messageRoute);
+app.use('/api/v1/friend',friendRoute);
+
  
 
 server.listen(PORT, ()=>{

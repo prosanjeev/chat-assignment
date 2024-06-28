@@ -1,7 +1,9 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import userReducer from "./userSlice.js";
-import messageReducer from "./messageSlice.js";
+import friendsReducer from './friendsSlice';
+import friendsRequestReducer from './friendRequestSlice.js';
 import socketReducer from "./socketSlice.js";
+
 import {
     persistReducer,
     FLUSH,
@@ -21,7 +23,8 @@ import {
 
   const rootReducer = combineReducers({
     user:userReducer,
-    message:messageReducer,
+    friends: friendsReducer,
+    friendsRequest: friendsRequestReducer,
     socket:socketReducer
  })
 

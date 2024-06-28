@@ -1,13 +1,13 @@
-import React from 'react';
-import OtherUser from './OtherUser';
-import useGetOtherUsers from '../hooks/useGetOtherUsers';
+import React from "react";
+import OtherUser from "./OtherUser";
 import { useSelector } from "react-redux";
-import { Box } from '@chakra-ui/react';
+import { Box } from "@chakra-ui/react";
+import useGetOtherUsers from "../../hooks/useGetOtherUsers";
 
 const OtherUsers = () => {
   // my custom hook
   useGetOtherUsers();
-  const { otherUsers } = useSelector(store => store.user);
+  const { otherUsers } = useSelector((store) => store.user);
   if (!otherUsers) return null; // early return in React
 
   return (
@@ -17,6 +17,6 @@ const OtherUsers = () => {
       ))}
     </Box>
   );
-}
+};
 
 export default OtherUsers;

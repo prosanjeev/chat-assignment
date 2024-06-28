@@ -23,7 +23,9 @@ const userModel = new mongoose.Schema({
     profilePhoto: {
         type: String,
         default: ''
-    }
+    },
+    lastLogin: Date
+
    
 }, { timestamps: true });
 
